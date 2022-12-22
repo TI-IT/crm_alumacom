@@ -6,6 +6,10 @@ function Carcas({ props }) {
   const canvasRef = React.useRef(null);
 
   React.useEffect(() => {
+    ramaStart();
+  }, []);
+
+  function ramaStart() {
     const canvas = canvasRef.current;
     canvas.width = 500;
     canvas.height = 500;
@@ -15,16 +19,16 @@ function Carcas({ props }) {
     const RED = '204,77,77,1';
     const BLUE = '76,67,196,1';
 
-    let width_rama = 400;
+    let width_rama = 300;
     let height_rama = 300;
 
     let position = {
-      x: 20,
-      y: 30,
+      x: 100,
+      y: 100,
     };
     W62(ctx, position.x, position.y, width_rama, height_rama, RED);
-    W62(ctx, position.x + 10, position.y + 10, width_rama - 10, height_rama - 10, BLUE);
-  }, []);
+    W62(ctx, position.x + 10, position.y + 10, width_rama, height_rama, BLUE);
+  }
 
   return (
     <>

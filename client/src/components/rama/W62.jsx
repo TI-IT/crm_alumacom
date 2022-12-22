@@ -5,11 +5,11 @@ function W62(ctx, position_x, position_y, width_rama, height_rama, color) {
   ctx.lineCap = 'butt';
   ctx.lineJoin = 'miter';
   ctx.beginPath();
-  ctx.moveTo(position_x, position_y);
-  ctx.lineTo(width_rama - position_x, position_y);
-  ctx.lineTo(width_rama - position_x, height_rama - position_y);
-  ctx.lineTo(position_x, height_rama - position_y);
-  ctx.lineTo(position_x, position_y);
+  ctx.moveTo(position_x, position_y); //1
+  ctx.lineTo(width_rama, position_y); //2
+  ctx.lineTo(width_rama, height_rama); //3
+  ctx.lineTo(position_x, height_rama); // 4
+  ctx.lineTo(position_x, position_y); //5
   ctx.closePath();
   ctx.stroke();
   ctx.shadowOffsetX = 15;
